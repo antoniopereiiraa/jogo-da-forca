@@ -1,0 +1,141 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-5px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    80% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+.animate-bounceIn {
+    animation: bounceIn 0.5s;
+}
+
+.letter-tile {
+    transition: all 0.2s ease;
+}
+
+.letter-tile:hover:not(.revealed):not(.wrong) {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.letter-reveal {
+    animation: fadeIn 0.4s;
+}
+
+.hangman-part {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hangman-part.visible {
+    opacity: 1;
+}
+
+.theme-badge {
+    transition: all 0.2s ease;
+}
+
+.theme-badge:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+
+    .w-48,
+    .h-64 {
+        width: 10rem !important;
+        height: 14rem !important;
+    }
+
+    .w-12,
+    .h-12 {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+
+    .w-8,
+    .h-10 {
+        width: 1.5rem !important;
+        height: 2rem !important;
+    }
+
+    .text-2xl {
+        font-size: 1.25rem !important;
+    }
+
+    .font-bold {
+        font-weight: 600 !important;
+    }
+
+    .rounded-xl {
+        border-radius: 0.75rem !important;
+    }
+
+    .p-6,
+    .md\:p-8 {
+        padding: 1rem !important;
+    }
+
+    .mb-8 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    .gap-2 {
+        gap: 0.25rem !important;
+    }
+
+    .grid-cols-7 {
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+    }
+}
